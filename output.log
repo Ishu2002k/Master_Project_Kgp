@@ -1,0 +1,26 @@
+Namespace(device=device(type='cuda', index=0), run_id=74, comment=None, demo=False, load=None, transfer_load=None, checkpoint_freq=1000, data_root='/home/jovyan/video-storage/amit_files/MTP_01/Vimeo_Triplet_Folder/', config='/home/jovyan/video-storage/amit_files/MTP_01/keypoints_triplet.yaml', epochs=24, processes=7, seed=None, cma_algo=None, cma_step_mode='auto', cma_step_decay=0.001, cma_initial_step_size=None, cma_samples=None, cma_oversample=0, display=False, display_freq=5000, display_kp_rows=4, opt_level='O2', model_type='F', model_in_channels=3, model_keypoints=10, transporter_combine_mode='max', policy_action_select_mode='argmax', policy_depth=1, gym_reward_count_limit=None, optimizer='Adam', batch_size=16, lr=None, dataset=None, dataset_train_len=71729, dataset_test_len=1464, dataset_randomize=False, data_aug_tps_cntl_pts=4, data_aug_tps_variance=0.05, data_aug_max_rotate=0.1, data_aug_type=None, dataset_1='first_image', dataset_2='second_image', model_z_channels=64, **{'cma_algo;': 'fast'})
+device: cuda:0 run_id: 74 comment: None demo: False load: None transfer_load: None checkpoint_freq: 1000 data_root: /home/jovyan/video-storage/amit_files/MTP_01/Vimeo_Triplet_Folder/ config: /home/jovyan/video-storage/amit_files/MTP_01/keypoints_triplet.yaml epochs: 24 processes: 7 seed: None cma_algo: None cma_step_mode: auto cma_step_decay: 0.001 cma_initial_step_size: None cma_samples: None cma_oversample: 0 display: False display_freq: 5000 display_kp_rows: 4 opt_level: O2 model_type: F model_in_channels: 3 model_keypoints: 10 transporter_combine_mode: max policy_action_select_mode: argmax policy_depth: 1 gym_reward_count_limit: None optimizer: Adam batch_size: 16 lr: None dataset: None dataset_train_len: 71729 dataset_test_len: 1464 dataset_randomize: False data_aug_tps_cntl_pts: 4 data_aug_tps_variance: 0.05 data_aug_max_rotate: 0.1 data_aug_type: None dataset_1: first_image dataset_2: second_image model_z_channels: 64 cma_algo;: fast 
+[32mEPOCH 1 LR: 0.0001 [36mave loss: 0.011411606473848224 [94mbest loss: 0.011411606473848224 [0m
+[32mEPOCH 2 LR: 0.0001 [36mave loss: 0.012582703121006488 [94mbest loss: 0.011411606473848224 [0m
+[32mEPOCH 3 LR: 0.0001 [36mave loss: 0.00857989510986954 [94mbest loss: 0.00857989510986954 [0m
+[32mEPOCH 4 LR: 0.0001 [36mave loss: 0.007895591482520104 [94mbest loss: 0.007895591482520104 [0m
+[32mEPOCH 5 LR: 0.0001 [36mave loss: 0.006656678183935583 [94mbest loss: 0.006656678183935583 [0m
+[32mEPOCH 6 LR: 0.0001 [36mave loss: 0.006808994733728468 [94mbest loss: 0.006656678183935583 [0m
+[32mEPOCH 7 LR: 0.0001 [36mave loss: 0.006744494917802513 [94mbest loss: 0.006656678183935583 [0m
+[32mEPOCH 8 LR: 0.0001 [36mave loss: 0.00644792658276856 [94mbest loss: 0.00644792658276856 [0m
+[32mEPOCH 9 LR: 0.0001 [36mave loss: 0.006266853213310242 [94mbest loss: 0.006266853213310242 [0m
+[32mEPOCH 10 LR: 0.0001 [36mave loss: 0.0066047996748238805 [94mbest loss: 0.006266853213310242 [0m
+[32mEPOCH 11 LR: 0.0001 [36mave loss: 0.007154056476429105 [94mbest loss: 0.006266853213310242 [0m
+[32mEPOCH 12 LR: 0.0001 [36mave loss: 0.006183139095082879 [94mbest loss: 0.006183139095082879 [0m
+[32mEPOCH 13 LR: 0.0001 [36mave loss: 0.006176357995718718 [94mbest loss: 0.006176357995718718 [0m
+[32mEPOCH 14 LR: 0.0001 [36mave loss: 0.006138524739071727 [94mbest loss: 0.006138524739071727 [0m
+[32mEPOCH 15 LR: 0.0001 [36mave loss: 0.0061831044033169745 [94mbest loss: 0.006138524739071727 [0m
+[32mEPOCH 16 LR: 0.0001 [36mave loss: 0.006037086364813149 [94mbest loss: 0.006037086364813149 [0m
+[32mEPOCH 17 LR: 0.0001 [36mave loss: 0.006106694601476193 [94mbest loss: 0.006037086364813149 [0m
+[32mEPOCH 18 LR: 0.0001 [36mave loss: 0.006434012483805418 [94mbest loss: 0.006037086364813149 [0m
+[32mEPOCH 19 LR: 0.0001 [36mave loss: 0.005935778736602515 [94mbest loss: 0.005935778736602515 [0m
+[32mEPOCH 20 LR: 0.0001 [36mave loss: 0.006111195520497858 [94mbest loss: 0.005935778736602515 [0m
+[32mEPOCH 21 LR: 0.0001 [36mave loss: 0.00585964519996196 [94mbest loss: 0.00585964519996196 [0m
+[32mEPOCH 22 LR: 0.0001 [36mave loss: 0.006298665213398636 [94mbest loss: 0.00585964519996196 [0m
+[32mEPOCH 23 LR: 0.0001 [36mave loss: 0.00608043372631073 [94mbest loss: 0.00585964519996196 [0m
+[32mEPOCH 24 LR: 0.0001 [36mave loss: 0.005735466338228435 [94mbest loss: 0.005735466338228435 [0m
