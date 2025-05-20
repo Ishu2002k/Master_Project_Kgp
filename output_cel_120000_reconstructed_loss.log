@@ -1,0 +1,26 @@
+Namespace(device=device(type='cuda', index=0), run_id=22, comment=None, demo=False, load=None, transfer_load=None, checkpoint_freq=1000, data_root='/home/jovyan/video-storage/amit_files/Master_Thesis_Project/', config='/home/jovyan/video-storage/amit_files/keypoints/configs/keypoints_celeba.yaml', epochs=24, processes=7, seed=None, cma_algo=None, cma_step_mode='auto', cma_step_decay=0.001, cma_initial_step_size=None, cma_samples=None, cma_oversample=0, display=False, display_freq=5000, display_kp_rows=4, opt_level='O2', model_type='F', model_in_channels=3, model_keypoints=10, transporter_combine_mode='max', policy_action_select_mode='argmax', policy_depth=1, gym_reward_count_limit=None, optimizer='Adam', batch_size=16, lr=None, dataset='celeba', dataset_train_len=120000, dataset_test_len=200, dataset_randomize=False, data_aug_tps_cntl_pts=4, data_aug_tps_variance=0.05, data_aug_max_rotate=0.1, model_z_channels=64, data_aug_type='tps_and_rotate', **{'cma_algo;': 'fast'})
+device: cuda:0 run_id: 22 comment: None demo: False load: None transfer_load: None checkpoint_freq: 1000 data_root: /home/jovyan/video-storage/amit_files/Master_Thesis_Project/ config: /home/jovyan/video-storage/amit_files/keypoints/configs/keypoints_celeba.yaml epochs: 24 processes: 7 seed: None cma_algo: None cma_step_mode: auto cma_step_decay: 0.001 cma_initial_step_size: None cma_samples: None cma_oversample: 0 display: False display_freq: 5000 display_kp_rows: 4 opt_level: O2 model_type: F model_in_channels: 3 model_keypoints: 10 transporter_combine_mode: max policy_action_select_mode: argmax policy_depth: 1 gym_reward_count_limit: None optimizer: Adam batch_size: 16 lr: None dataset: celeba dataset_train_len: 120000 dataset_test_len: 200 dataset_randomize: False data_aug_tps_cntl_pts: 4 data_aug_tps_variance: 0.05 data_aug_max_rotate: 0.1 model_z_channels: 64 data_aug_type: tps_and_rotate cma_algo;: fast 
+[32mEPOCH 1 LR: 0.0001 [36mave loss: 1.4203183215111495 [94mbest loss: 1.4203183215111495 [0m
+[32mEPOCH 2 LR: 0.0001 [36mave loss: 1.092364022321999 [94mbest loss: 1.092364022321999 [0m
+[32mEPOCH 3 LR: 0.0001 [36mave loss: 0.7805470787920058 [94mbest loss: 0.7805470787920058 [0m
+[32mEPOCH 4 LR: 0.0001 [36mave loss: 0.6240517697297037 [94mbest loss: 0.6240517697297037 [0m
+[32mEPOCH 5 LR: 0.0001 [36mave loss: 0.48770942641422155 [94mbest loss: 0.48770942641422155 [0m
+[32mEPOCH 6 LR: 0.0001 [36mave loss: 0.3991729125380516 [94mbest loss: 0.3991729125380516 [0m
+[32mEPOCH 7 LR: 0.0001 [36mave loss: 0.4004706862382591 [94mbest loss: 0.3991729125380516 [0m
+[32mEPOCH 8 LR: 0.0001 [36mave loss: 0.3536139624193311 [94mbest loss: 0.3536139624193311 [0m
+[32mEPOCH 9 LR: 0.0001 [36mave loss: 0.3214245004113764 [94mbest loss: 0.3214245004113764 [0m
+[32mEPOCH 10 LR: 0.0001 [36mave loss: 0.2540352617390454 [94mbest loss: 0.2540352617390454 [0m
+[32mEPOCH 11 LR: 0.0001 [36mave loss: 0.28028107513673606 [94mbest loss: 0.2540352617390454 [0m
+[32mEPOCH 12 LR: 0.0001 [36mave loss: 0.24220375767908991 [94mbest loss: 0.24220375767908991 [0m
+[32mEPOCH 13 LR: 0.0001 [36mave loss: 0.23020801413804293 [94mbest loss: 0.23020801413804293 [0m
+[32mEPOCH 14 LR: 0.0001 [36mave loss: 0.21385253653861583 [94mbest loss: 0.21385253653861583 [0m
+[32mEPOCH 15 LR: 0.0001 [36mave loss: 0.18612109664827586 [94mbest loss: 0.18612109664827586 [0m
+[32mEPOCH 16 LR: 0.0001 [36mave loss: 0.20470562670379877 [94mbest loss: 0.18612109664827586 [0m
+[32mEPOCH 17 LR: 0.0001 [36mave loss: 0.17053060249891133 [94mbest loss: 0.17053060249891133 [0m
+[32mEPOCH 18 LR: 0.0001 [36mave loss: 0.18957708240486681 [94mbest loss: 0.17053060249891133 [0m
+[32mEPOCH 19 LR: 0.0001 [36mave loss: 0.1817817442584783 [94mbest loss: 0.17053060249891133 [0m
+[32mEPOCH 20 LR: 0.0001 [36mave loss: 0.17982489648275077 [94mbest loss: 0.17053060249891133 [0m
+[32mEPOCH 21 LR: 0.0001 [36mave loss: 0.16575445535127073 [94mbest loss: 0.16575445535127073 [0m
+[32mEPOCH 22 LR: 0.0001 [36mave loss: 0.18698176799807698 [94mbest loss: 0.16575445535127073 [0m
+[32mEPOCH 23 LR: 0.0001 [36mave loss: 0.14721647421829404 [94mbest loss: 0.14721647421829404 [0m
+[32mEPOCH 24 LR: 0.0001 [36mave loss: 0.15657269754447042 [94mbest loss: 0.14721647421829404 [0m

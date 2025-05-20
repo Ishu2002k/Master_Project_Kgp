@@ -1,0 +1,165 @@
+Namespace(device=device(type='cuda', index=0), run_id=67, comment=None, demo=False, load=None, transfer_load=None, checkpoint_freq=1000, data_root='/home/jovyan/video-storage/amit_files/Master_Thesis_Project/KTH_Dataset_2/paired_images', config='/home/jovyan/video-storage/amit_files/Master_Thesis_Project/keypoints_KTH.yml', epochs=24, processes=7, seed=None, cma_algo=None, cma_step_mode='auto', cma_step_decay=0.001, cma_initial_step_size=None, cma_samples=None, cma_oversample=0, display=False, display_freq=5000, display_kp_rows=4, opt_level='O2', model_type='F', model_in_channels=3, model_keypoints=10, transporter_combine_mode='max', policy_action_select_mode='argmax', policy_depth=1, gym_reward_count_limit=None, optimizer='Adam', batch_size=16, lr=None, dataset=None, dataset_train_len=34000, dataset_test_len=274, dataset_randomize=False, data_aug_tps_cntl_pts=4, data_aug_tps_variance=0.05, data_aug_max_rotate=0.1, data_aug_type=None, dataset_1='first_images', dataset_2='second_images', model_z_channels=64, **{'cma_algo;': 'fast'})
+device: cuda:0 run_id: 67 comment: None demo: False load: None transfer_load: None checkpoint_freq: 1000 data_root: /home/jovyan/video-storage/amit_files/Master_Thesis_Project/KTH_Dataset_2/paired_images config: /home/jovyan/video-storage/amit_files/Master_Thesis_Project/keypoints_KTH.yml epochs: 24 processes: 7 seed: None cma_algo: None cma_step_mode: auto cma_step_decay: 0.001 cma_initial_step_size: None cma_samples: None cma_oversample: 0 display: False display_freq: 5000 display_kp_rows: 4 opt_level: O2 model_type: F model_in_channels: 3 model_keypoints: 10 transporter_combine_mode: max policy_action_select_mode: argmax policy_depth: 1 gym_reward_count_limit: None optimizer: Adam batch_size: 16 lr: None dataset: None dataset_train_len: 34000 dataset_test_len: 274 dataset_randomize: False data_aug_tps_cntl_pts: 4 data_aug_tps_variance: 0.05 data_aug_max_rotate: 0.1 data_aug_type: None dataset_1: first_images dataset_2: second_images model_z_channels: 64 cma_algo;: fast 
+KeyNet(
+  (encoder): Unit(
+    (in_block): Sequential(
+      (0): ReplicationPad2d((1, 1, 1, 1))
+      (1): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1))
+      (2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (3): LeakyReLU(negative_slope=0.01, inplace=True)
+    )
+    (core): Sequential(
+      (0): ReplicationPad2d((1, 1, 1, 1))
+      (1): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1))
+      (2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (3): LeakyReLU(negative_slope=0.01, inplace=True)
+      (4): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+      (5): ReplicationPad2d((1, 1, 1, 1))
+      (6): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1))
+      (7): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (8): LeakyReLU(negative_slope=0.01, inplace=True)
+      (9): ReplicationPad2d((1, 1, 1, 1))
+      (10): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1))
+      (11): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (12): LeakyReLU(negative_slope=0.01, inplace=True)
+      (13): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+      (14): ReplicationPad2d((1, 1, 1, 1))
+      (15): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1))
+      (16): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (17): LeakyReLU(negative_slope=0.01, inplace=True)
+      (18): ReplicationPad2d((1, 1, 1, 1))
+      (19): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1))
+      (20): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (21): LeakyReLU(negative_slope=0.01, inplace=True)
+      (22): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+      (23): ReplicationPad2d((1, 1, 1, 1))
+      (24): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1))
+      (25): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (26): LeakyReLU(negative_slope=0.01, inplace=True)
+      (27): ReplicationPad2d((1, 1, 1, 1))
+      (28): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1))
+      (29): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (30): LeakyReLU(negative_slope=0.01, inplace=True)
+    )
+    (out_block): Sequential(
+      (0): Conv2d(512, 64, kernel_size=(1, 1), stride=(1, 1))
+      (1): LeakyReLU(negative_slope=0.01, inplace=True)
+    )
+  )
+  (keypoint): Unit(
+    (in_block): Sequential(
+      (0): ReplicationPad2d((1, 1, 1, 1))
+      (1): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1))
+      (2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (3): LeakyReLU(negative_slope=0.01, inplace=True)
+    )
+    (core): Sequential(
+      (0): ReplicationPad2d((1, 1, 1, 1))
+      (1): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1))
+      (2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (3): LeakyReLU(negative_slope=0.01, inplace=True)
+      (4): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+      (5): ReplicationPad2d((1, 1, 1, 1))
+      (6): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1))
+      (7): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (8): LeakyReLU(negative_slope=0.01, inplace=True)
+      (9): ReplicationPad2d((1, 1, 1, 1))
+      (10): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1))
+      (11): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (12): LeakyReLU(negative_slope=0.01, inplace=True)
+      (13): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+      (14): ReplicationPad2d((1, 1, 1, 1))
+      (15): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1))
+      (16): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (17): LeakyReLU(negative_slope=0.01, inplace=True)
+      (18): ReplicationPad2d((1, 1, 1, 1))
+      (19): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1))
+      (20): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (21): LeakyReLU(negative_slope=0.01, inplace=True)
+      (22): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+      (23): ReplicationPad2d((1, 1, 1, 1))
+      (24): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1))
+      (25): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (26): LeakyReLU(negative_slope=0.01, inplace=True)
+      (27): ReplicationPad2d((1, 1, 1, 1))
+      (28): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1))
+      (29): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (30): LeakyReLU(negative_slope=0.01, inplace=True)
+    )
+    (out_block): Sequential(
+      (0): Conv2d(512, 10, kernel_size=(1, 1), stride=(1, 1))
+      (1): LeakyReLU(negative_slope=0.01, inplace=True)
+    )
+  )
+  (ssm): SpatialLogSoftmax()
+  (key2map): GaussianLike()
+  (decoder): Unit(
+    (in_block): Sequential(
+      (0): ReplicationPad2d((1, 1, 1, 1))
+      (1): Conv2d(74, 512, kernel_size=(3, 3), stride=(1, 1))
+      (2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (3): LeakyReLU(negative_slope=0.01, inplace=True)
+    )
+    (core): Sequential(
+      (0): ReplicationPad2d((1, 1, 1, 1))
+      (1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1))
+      (2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (3): ReLU(inplace=True)
+      (4): UpsamplingBilinear2d(scale_factor=2.0, mode='bilinear')
+      (5): ReplicationPad2d((1, 1, 1, 1))
+      (6): Conv2d(512, 256, kernel_size=(3, 3), stride=(1, 1))
+      (7): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (8): ReLU(inplace=True)
+      (9): ReplicationPad2d((1, 1, 1, 1))
+      (10): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1))
+      (11): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (12): ReLU(inplace=True)
+      (13): UpsamplingBilinear2d(scale_factor=2.0, mode='bilinear')
+      (14): ReplicationPad2d((1, 1, 1, 1))
+      (15): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1))
+      (16): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (17): ReLU(inplace=True)
+      (18): ReplicationPad2d((1, 1, 1, 1))
+      (19): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1))
+      (20): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (21): ReLU(inplace=True)
+      (22): UpsamplingBilinear2d(scale_factor=2.0, mode='bilinear')
+      (23): ReplicationPad2d((1, 1, 1, 1))
+      (24): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1))
+      (25): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (26): ReLU(inplace=True)
+      (27): ReplicationPad2d((1, 1, 1, 1))
+      (28): Conv2d(128, 64, kernel_size=(3, 3), stride=(1, 1))
+      (29): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (30): ReLU(inplace=True)
+    )
+    (out_block): Sequential(
+      (0): Conv2d(64, 3, kernel_size=(1, 1), stride=(1, 1))
+      (1): LeakyReLU(negative_slope=0.01, inplace=True)
+    )
+  )
+)
+[32mEPOCH 0 LR: 0.0001 [36mave loss: 0.017414887715131045 [94mbest loss: 0.017414887715131045 [0m
+[32mEPOCH 1 LR: 0.0001 [36mave loss: 0.01655594715848565 [94mbest loss: 0.01655594715848565 [0m
+[32mEPOCH 2 LR: 0.0001 [36mave loss: 0.015245799720287324 [94mbest loss: 0.015245799720287324 [0m
+[32mEPOCH 3 LR: 0.0001 [36mave loss: 0.013268032856285573 [94mbest loss: 0.013268032856285573 [0m
+[32mEPOCH 4 LR: 0.0001 [36mave loss: 0.012433206522837281 [94mbest loss: 0.012433206522837281 [0m
+[32mEPOCH 5 LR: 0.0001 [36mave loss: 0.011608347622677683 [94mbest loss: 0.011608347622677683 [0m
+[32mEPOCH 6 LR: 0.0001 [36mave loss: 0.014099852787330747 [94mbest loss: 0.011608347622677683 [0m
+[32mEPOCH 7 LR: 0.0001 [36mave loss: 0.010833151265978813 [94mbest loss: 0.010833151265978813 [0m
+[32mEPOCH 8 LR: 0.0001 [36mave loss: 0.010492279450409115 [94mbest loss: 0.010492279450409115 [0m
+[32mEPOCH 9 LR: 0.0001 [36mave loss: 0.009716768702492117 [94mbest loss: 0.009716768702492117 [0m
+[32mEPOCH 10 LR: 0.0001 [36mave loss: 0.009693969576619565 [94mbest loss: 0.009693969576619565 [0m
+[32mEPOCH 11 LR: 0.0001 [36mave loss: 0.009555939747951925 [94mbest loss: 0.009555939747951925 [0m
+[32mEPOCH 12 LR: 0.0001 [36mave loss: 0.010268553113564848 [94mbest loss: 0.009555939747951925 [0m
+[32mEPOCH 13 LR: 0.0001 [36mave loss: 0.008826271258294582 [94mbest loss: 0.008826271258294582 [0m
+[32mEPOCH 14 LR: 0.0001 [36mave loss: 0.008160632569342852 [94mbest loss: 0.008160632569342852 [0m
+[32mEPOCH 15 LR: 0.0001 [36mave loss: 0.008585928869433702 [94mbest loss: 0.008160632569342852 [0m
+[32mEPOCH 16 LR: 0.0001 [36mave loss: 0.008221578225493431 [94mbest loss: 0.008160632569342852 [0m
+[32mEPOCH 17 LR: 0.0001 [36mave loss: 0.007841392746195197 [94mbest loss: 0.007841392746195197 [0m
+[32mEPOCH 18 LR: 0.0001 [36mave loss: 0.0077635485911741854 [94mbest loss: 0.0077635485911741854 [0m
+[32mEPOCH 19 LR: 0.0001 [36mave loss: 0.007951388251967728 [94mbest loss: 0.0077635485911741854 [0m
+[32mEPOCH 20 LR: 0.0001 [36mave loss: 0.0076407652348279955 [94mbest loss: 0.0076407652348279955 [0m
+[32mEPOCH 21 LR: 0.0001 [36mave loss: 0.007562838564626873 [94mbest loss: 0.007562838564626873 [0m
+[32mEPOCH 22 LR: 0.0001 [36mave loss: 0.007572024967521429 [94mbest loss: 0.007562838564626873 [0m
+[32mEPOCH 23 LR: 0.0001 [36mave loss: 0.007258715736679733 [94mbest loss: 0.007258715736679733 [0m
